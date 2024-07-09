@@ -1,0 +1,88 @@
+version: '3'
+
+services:
+
+  # db:
+  #   image: mysql
+  #   environment:
+  #     # MYSQL_DATABASE: demo_website_db
+  #     # MYSQL_USER: mohamed
+  #     # MYSQL_PASSWORD: Mohamed@1234
+  #     # # MYSQL_ALLOW_EMPTY_PASSWORD: 1
+  #      MYSQL_ROOT_PASSWORD: 1234
+  #      MYSQL_DATABASE: demo_website_db
+  #      MYSQL_USER: mohamed
+  #      MYSQL_PASSWORD: Mohamed@1234
+
+  #   volumes:
+  #     - db-data:/var/lib/mysql
+  #   # networks:
+  #   #   - app-network
+  #   # ports:
+  #   #   - "3306:3306"
+
+  php-apache:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: localhost
+      DB_PORT: 3306
+      DB_DATABASE: demo_website_db
+      DB_USERNAME: mohamed
+      DB_PASSWORD: Mohamed@1234
+    # depends_on:
+    #   - db
+    volumes:
+      - .:/var/www/html
+    # networks:
+    #   - app-network
+  
+#   phpmyadmin:
+#     image: phpmyadmin
+#     ports:
+#       - 8001:80
+#     environment:
+#       MA_HOST: db
+#       PMA_PORT: 3306
+
+volumes:
+  db-data:
+
+# networks:
+#   app-network:
+#     driver: bridge
+
+# version: '3.8'
+
+# services:
+#   web:
+#     build: .
+#     container_name: php-apache
+#     ports:
+#       - "8000:80"
+#     volumes:
+#       - .:/var/www/html
+#     depends_on:
+#       - db
+#     environment:
+#       - MYSQL_HOST=db
+#       - MYSQL_USER=root
+#       - MYSQL_PASSWORD=rootpassword
+#       - MYSQL_DATABASE=mydatabase
+
+#   db:
+#     image: mysql:5.7
+#     container_name: mysql
+#     environment:
+#       MYSQL_ROOT_PASSWORD: rootpassword
+#       MYSQL_DATABASE: mydatabase
+#     ports:
+#       - "3306:3306"
+#     volumes:
+#       - db_data:/var/lib/mysql
+
+# volumes:
+#   db_data:
+

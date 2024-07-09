@@ -1,10 +1,15 @@
 
 <?php
 
-    $db_server = getenv('MYSQL_HOST');
-    $db_user = getenv('MYSQL_USER');
-    $db_pass = getenv('MYSQL_PASSWORD');
-    $db_name =  getenv('MYSQL_DATABASE');
+    // $db_server = getenv('MYSQL_HOST');
+    // $db_user = getenv('MYSQL_USER');
+    // $db_pass = getenv('MYSQL_PASSWORD');
+    // $db_name =  getenv('MYSQL_DATABASE');
+
+    $db_server = "localhost";
+    $db_user = "mohamed";
+    $db_pass = "Mohamed@1234";
+    $db_name =  "demo_website_db";
     $conn = "";
 
     try{
