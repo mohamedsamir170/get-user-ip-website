@@ -231,6 +231,7 @@ By: Mohamed Samir
     - PHP Application: `http://localhost:8000`
     - phpMyAdmin: `http://localhost:8001`
 
+
 ## Task 5: Networking Basics
 
 - **Localhost IP Address:** 127.0.0.1
@@ -239,6 +240,8 @@ By: Mohamed Samir
     ```bash
     ssh -i aws.pem ec2-user@13.51.206.117
     ```
+- **Access the cloud service:**
+-    Remotly: `http://13.51.206.117:8000`
 
 ## Challenges Faced
 - Volume Mounting: Ensuring correct volume mounts for database initialization and PHP code sync.
